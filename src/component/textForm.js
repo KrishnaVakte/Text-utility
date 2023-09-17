@@ -54,26 +54,26 @@ export default function TextForm(props) {
 
     return (
         <div>
-            <div className="mb-3 container" >
+            <div className="mb-3 container">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label my-2"><h2>Enter Text To Analyse : </h2></label>
                 <textarea className={`form-control border-primary bg-${(props.mode === 'dark' ? 'secondary' : 'light')} text-${(props.mode === 'dark' ? 'light' : 'dark')}`} id="myInput" rows="8" value={text} onChange={getText} placeholder='Enter yor text here...'></textarea>
 
 
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={upperCase}>Upper case</button>
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={lowerCase}>Lower case</button>
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={copy}>Copy <span className="badge "></span></button>
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={trimSpace}>Remove Extra Space </button>
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={speak}>Speak</button>
-                <button type="button" className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={resetText}>Reset</button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={upperCase}>Upper case</button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={lowerCase}>Lower case</button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={copy}>Copy <span className="badge "></span></button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={trimSpace}>Remove Extra Space </button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={speak}>Speak</button>
+                <button type="button" disabled={text.length===0} className={`btn btn-${(props.mode === 'dark' ? 'info' : 'primary')} my-4 mx-3`} onClick={resetText}>Reset</button>
             </div>
 
             <div className="analyse container">
                 <h3>Analysis :</h3>
-                <p>{text.split(' ').filter((e)=>{return e.length!==0}).length} words and {text.length} characters. </p>
+                <p>{text.split(/\s+/g).filter((e)=>{return e.length!==0}).length} words and {text.length} characters. </p>
             </div>
 
             <div className="preview container">
-                <h3>Preview</h3>
+                <h3>Preview : </h3>
                 <p>{text}</p>
             </div>
 

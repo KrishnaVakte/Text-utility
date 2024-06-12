@@ -18,6 +18,19 @@ Visit here: https://krishnavakte.github.io/text-utility/
 - **Word and Character Count**: Get an instant analysis of the number of words and characters in your text.
 - **Preview**: See a live preview of your transformed text.
 
+
+## Technologies Used
+
+TextUtils is built using modern web technologies, ensuring a smooth and efficient user experience:
+
+- **React**: A JavaScript library for building user interfaces.
+- **HTML5**: The standard markup language for creating web pages.
+- **CSS3**: The style sheet language used for describing the look and formatting of a document.
+- **JavaScript**: The programming language of the web.
+- **Bootstrap**: A popular CSS framework for responsive and mobile-first web development.
+
+  here I am used Github pages to deploy the app .
+
 ## Screenshot
 
 ![image](https://github.com/KrishnaVakte/text-utility/assets/86585840/a0f8daa7-d2ad-4ca2-80d5-cc733e341b56)
